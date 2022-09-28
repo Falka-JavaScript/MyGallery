@@ -1,25 +1,31 @@
-class Controller{
-    loadImages(dir,prefix){
-       
-        
+class Controller {
+    loadImages(dir, prefix) {
 
-        
 
         $('section div').html('');
         $('section div').hide(300);
 
-        for(let i = 1;i<=5;i++){
-            $('<img>',{src: `img/${dir}/${prefix}${i}.jpg`, class: 'mini'}).delay(300).appendTo($('section div'));
+        for (let i = 1; i <= 5; i++) {
+            $('<img>', {src: `img/${dir}/${prefix}${i}.jpg`, class: 'mini'}).delay(300).appendTo($('section div'));
         }
         $('section div').fadeIn(300);
     }
-    dispatch(url){
-        if(url=='img/drone.jpg'){
-            this.loadImages('drones','d');
-        }else if(url=='img/mountain.jpg'){
-            this.loadImages('landscapes','mt');
-        }else if(url=='img/laptop.jpg'){
-            this.loadImages('laptops','l');
+
+    dispatch(url) {
+        if (url == 'img/drone.jpg') {
+            this.loadImages('drones', 'd');
+        } else if (url == 'img/mountain.jpg') {
+            this.loadImages('landscapes', 'mt');
+        } else if (url == 'img/laptop.jpg') {
+            this.loadImages('laptops', 'l');
         }
     }
+
+    displayImage(url) {
+        let logo = $('#logo');
+        logo.animate({'width': '0%'}, 1);
+        logo.attr('src', url);
+        logo.animate({'width': '100%'}, 1000);
+    }
+
 }
