@@ -23,6 +23,7 @@ class Controller {
 
     displayImage(url) {
         let logo = $('#logo');
+
         logo.animate({'width': '0%'}, 1);
         logo.attr('src', url);
         logo.animate({'width': '100%'}, 1000);

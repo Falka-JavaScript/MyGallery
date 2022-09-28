@@ -24,6 +24,7 @@ $(document).ready(function () {
 
     $('.nav_img').hover(
         function(){
+            console.log(1);
             $(this).css('transform','rotate(360deg)');
         },
         function(){
